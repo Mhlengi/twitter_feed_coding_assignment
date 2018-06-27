@@ -14,7 +14,7 @@ class Tweet:
 def create_tweet_objects(user):
     with open('tweet.txt', 'r') as tweet_lines:
         lines = tweet_lines.readlines()
-        tweets = create_tweets(lines, user)
+        tweets = create_tweets_list(lines, user)
         return tweets
 
 
@@ -28,7 +28,7 @@ def create_users(lines):
     return list(set(users))
 
 
-def create_tweets(lines, user):
+def create_tweets_list(lines, user):
     users = list()
     for line in lines:
         tweet = ''
@@ -49,7 +49,7 @@ def create_tweets(lines, user):
     return list(users)
 
 
-def create_user_objects():
+def create_users_list():
     with open('user.txt', 'r') as user_lines:
         lines = user_lines.readlines()
         users = create_users(lines)
@@ -59,3 +59,9 @@ def create_user_objects():
             user = User(user, handle)
             user_objects.append(user)
         return user_objects
+
+
+def sorted_users():
+    users = create_users_list()
+    users.sort(key=lambda x: x.name, reverse=False)
+    return users
