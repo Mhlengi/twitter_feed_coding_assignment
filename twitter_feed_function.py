@@ -36,17 +36,24 @@ def create_tweets_list(lines, user):
         if user.name == line.split('>')[0].strip():
             tweet = Tweet(
                 user,
-                line.split('>')[1].strip(),
+                tweet=trim_tweet_greater_140(line),
                 handle=user.handle
             )
         if user.name.lower() == 'ward':
             tweet = Tweet(
                 user,
-                line.split('>')[1].strip(),
+                tweet=trim_tweet_greater_140(line),
                 handle=custom_handle.lower()
             )
         users.append(tweet)
     return list(users)
+
+
+def trim_tweet_greater_140(line):
+    _tweet = line.split('>')[1].strip()
+    if len(_tweet) > 141:
+        _tweet = _tweet[:140]
+    return _tweet
 
 
 def create_users_list():
