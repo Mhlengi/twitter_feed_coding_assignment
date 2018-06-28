@@ -21,7 +21,7 @@ OK
 ## Run Twitter Feed Program
 - `python main_function.py` or `python3 main_function.py`
 - Expected results if everything is running as it expected.
-`
+- `
 Alan
 @alan: If you have a procedure with 10 parameters, you probably missed some.
 @alan: Random numbers should not be generated with a method chosen at random.
