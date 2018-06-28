@@ -13,7 +13,7 @@
 ## Run Unit Tests
 - `python tests.py` or `python3 tests.py`
 - Expected console output if everything is running as it expected.
-`
+- `
 Ran 8 tests in 0.004s
 OK
 `
